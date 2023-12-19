@@ -22,6 +22,6 @@
     "MsSqlScript": null
   },
   "Version": "9.0.0",
-  "ImagePath": "../../Content/Images/Modules/modules_logo_fhir.png",
-  "Description": "FHIR is a health care messaging format that allows systems to communicate in a standard way in any organization dealing with digital health care data. This module adds support for HL7 FHIR as JSON using steps and data types.  This module relies on a Microsoft Open License library found here: https://github.com/ewoutkramer/fhir-net-api."
+  "ImagePath": "./image.png",
+  "Description": "FHIR is a health care messaging format that allows systems to communicate in a standard way in any organization dealing with digital health care data. This module adds support for HL7 FHIR as JSON using steps and data types. This module relies on an Open Source library found here: https://fire.ly/products/firely-net-sdk/"
 }
