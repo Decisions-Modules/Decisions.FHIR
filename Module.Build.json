@@ -1,0 +1,27 @@
+{  "Resources": {
+    "NoComponents": true,
+    "CoreServicesDlls": [ "./Decisions.FHIR/obj/Decisions.FHIR.dll"
+    ],
+    "ReferenceDlls":  [
+        "./Decisions.FHIR/obj/Fhir.Metrics.dll",
+        "./Decisions.FHIR/obj/Hl7.Fhir.Base.dll",
+		"./Decisions.FHIR/obj/Hl7.Fhir.Conformance.dll",
+        "./Decisions.FHIR/obj/Hl7.Fhir.STU3.dll",
+        "./Decisions.FHIR/obj/Hl7.Fhir.R4.dll",
+        "./Decisions.FHIR/obj/Hl7.Fhir.R4B.dll",
+        "./Decisions.FHIR/obj/Hl7.Fhir.R5.dll"
+      ]
+    ,
+    "CliDlls": null,
+    "WebPages": null,
+    "SilverlightDlls": "",
+    "AgentDlls": null,
+    "InstallScript": "",
+    "SqlScripts": null,
+    "ObjectsToImport": "",
+    "MsSqlScript": null
+  },
+  "Version": "9.0.0",
+  "ImagePath": "../../Content/Images/Modules/modules_logo_fhir.png",
+  "Description": "FHIR is a health care messaging format that allows systems to communicate in a standard way in any organization dealing with digital health care data. This module adds support for HL7 FHIR as JSON using steps and data types.  This module relies on a Microsoft Open License library found here: https://github.com/ewoutkramer/fhir-net-api."
+}

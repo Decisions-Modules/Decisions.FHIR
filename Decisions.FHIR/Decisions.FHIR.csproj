@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>     
+    <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+    <LangVersion>10.0</LangVersion>
+	<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+  
+  <PropertyGroup>    
+    <OutputType>Library</OutputType>
+    <RootNamespace>Decisions.FHIR</RootNamespace>
+    <AssemblyName>$(RootNamespace)</AssemblyName>
+    <RootPath>../</RootPath>  
+    <BuildDest>$(RootPath)obj</BuildDest>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="DecisionsSDK" Version="8.16.0" />
+    <PackageReference Include="Hl7.Fhir.STU3" Version="5.4.0">
+		<Aliases>stu3</Aliases>
+	</PackageReference>
+	<PackageReference Include="Hl7.Fhir.R4" Version="5.4.0">
+		<Aliases>r4</Aliases>
+	</PackageReference>
+	<PackageReference Include="Hl7.Fhir.R4B" Version="5.4.0">
+		<Aliases>r4b</Aliases>
+	</PackageReference>
+	<PackageReference Include="Hl7.Fhir.R5" Version="5.4.0">
+		<Aliases>r5</Aliases>
+	</PackageReference>
+  </ItemGroup>
+
+</Project>

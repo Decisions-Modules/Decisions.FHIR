@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project
+    xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0" DefaultTargets="build_all">
+    
+	<Target Name="build_all">
+        <Exec Command="dotnet publish .\Decisions.FHIR\Decisions.FHIR.csproj --runtime win-x64 --self-contained false --output .\Decisions.FHIR\obj -c Debug" />
+		<Exec Command="dotnet tool update --global CreateDecisionsModule-GlobalTool" />
+        <CallTarget Targets="build_module"/>
+    </Target>
+    
+	<Target Name="build_module">
+        <Exec Command="CreateDecisionsModule -buildmodule Decisions.FHIR -output &quot;.&quot; -buildfile Module.Build.json"/>
+    </Target>
+
+</Project>
