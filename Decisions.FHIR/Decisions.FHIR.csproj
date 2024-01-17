@@ -17,7 +17,7 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="DecisionsSDK" Version="8.16.0" />
+    <PackageReference Include="DecisionsSDK" Version="9.0.0-beta" />
     <PackageReference Include="Hl7.Fhir.STU3" Version="5.4.0">
 		<Aliases>stu3</Aliases>
 	</PackageReference>
