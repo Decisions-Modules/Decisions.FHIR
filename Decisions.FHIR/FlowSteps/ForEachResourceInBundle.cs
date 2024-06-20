@@ -3,7 +3,6 @@ using DecisionsFramework.Design.Flow;
 using DecisionsFramework.Design.Flow.CoreSteps;
 using DecisionsFramework.Design.Flow.Mapping;
 using DecisionsFramework.Design.Flow.StepImplementations;
-using DecisionsFramework.Design.Properties;
 using Hl7.Fhir.Model;
 using System.Collections.Generic;
 using System.Linq;

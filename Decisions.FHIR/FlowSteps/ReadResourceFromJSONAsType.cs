@@ -59,9 +59,18 @@ namespace Decisions.FHIR.FlowSteps
                 List<OutcomeScenarioData> outcomes = new List<OutcomeScenarioData>();
                 if (string.IsNullOrEmpty(FHIRTypeName) == false)
                 {
+                    // Create the Data Description and set the Full Type Name to include the Assembly Name so we can look
+                    // it up from the correct Assembly in Type Utilities
+                    string typeNameWithAssembly = $"{FHIRTypeToCast.Assembly.GetName()}::{FHIRTypeToCast.FullName}";
+                    DecisionsNativeType decisionsNativeType = new DecisionsNativeType(FHIRTypeToCast)
+                    {
+                        FullName = typeNameWithAssembly
+                    };
+                    DataDescription dataDescription = new DataDescription(decisionsNativeType, OUT_RES_ITEM);
+
                     outcomes.Add(new OutcomeScenarioData(PATH_DONE, new DataDescription[]
                     {
-                        new DataDescription(FHIRTypeToCast, OUT_RES_ITEM)
+                        dataDescription
                     }));
                 }
                 outcomes.Add(new OutcomeScenarioData(PATH_INCORRECT));
