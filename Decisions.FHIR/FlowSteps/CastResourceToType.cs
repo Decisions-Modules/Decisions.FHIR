@@ -60,7 +60,9 @@ namespace Decisions.FHIR.FlowSteps
                 {
                     // Create the Data Description and set the Full Type Name to include the Assembly Name so we can look
                     // it up from the correct Assembly in Type Utilities
-                    string typeNameWithAssembly = $"{FHIRTypeToCast.Assembly.GetName()}::{FHIRTypeToCast.FullName}";
+                    string assemblyName = FHIRTypeToCast.Assembly.GetName().Name;
+                    string shortenedAssemblyName = assemblyName?.Split(",")[0];
+                    string typeNameWithAssembly = $"{shortenedAssemblyName}::{FHIRTypeToCast.FullName}";
                     DecisionsNativeType decisionsNativeType = new DecisionsNativeType(FHIRTypeToCast)
                     {
                         FullName = typeNameWithAssembly
