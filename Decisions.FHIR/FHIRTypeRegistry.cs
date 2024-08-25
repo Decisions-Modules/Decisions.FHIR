@@ -12,6 +12,7 @@ namespace Decisions.FHIR
 {
     public class FHIRTypeRegistry : IInitializable
     {
+        const string MODULE_NAME = "Decisions.FHIR";
         void IInitializable.Initialize()
         {
             FHIRLog.LOG.Debug("Registering all FHIR Types");
@@ -46,7 +47,7 @@ namespace Decisions.FHIR
                     if (allTypes.FirstOrDefault(x => x.DataTypeFullName == t.FullName) == null)
                     {
                         FHIRLog.LOG.Debug("Registering new datatype: {0}", t.FullName);
-                        TypeUtilities.RegisterNativeType(t);
+                        TypeUtilities.RegisterNativeTypeWithModuleName(t, null, false, false, MODULE_NAME);
                     }
                 }
 
@@ -56,7 +57,7 @@ namespace Decisions.FHIR
                     if (allTypes.FirstOrDefault(x => x.DataTypeFullName == t.FullName) == null)
                     {
                         FHIRLog.LOG.Debug("Registering new datatype: {0}", t.FullName);
-                        TypeUtilities.RegisterNativeType(t);
+                        TypeUtilities.RegisterNativeTypeWithModuleName(t, null, false, false, MODULE_NAME);
                     }
                 }
                 
