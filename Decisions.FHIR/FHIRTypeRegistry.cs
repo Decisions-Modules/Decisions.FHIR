@@ -44,7 +44,8 @@ namespace Decisions.FHIR
                 foreach (Type t in resources)
                 {
                     // Only register ones that are new!
-                    if (allTypes.FirstOrDefault(x => x.DataTypeFullName == t.FullName) == null)
+                    NativeDataType nativeDataType = allTypes.FirstOrDefault(x => x.DataTypeFullName == t.FullName);
+                    if (nativeDataType == null || nativeDataType.ModuleName != MODULE_NAME)
                     {
                         FHIRLog.LOG.Debug("Registering new datatype: {0}", t.FullName);
                         TypeUtilities.RegisterNativeTypeWithModuleName(t, null, false, false, MODULE_NAME);
@@ -54,7 +55,8 @@ namespace Decisions.FHIR
                 foreach (Type t in enumerations)
                 {
                     // Only register ones that are new!
-                    if (allTypes.FirstOrDefault(x => x.DataTypeFullName == t.FullName) == null)
+                    NativeDataType nativeDataType = allTypes.FirstOrDefault(x => x.DataTypeFullName == t.FullName);
+                    if (nativeDataType == null || nativeDataType.ModuleName != MODULE_NAME)
                     {
                         FHIRLog.LOG.Debug("Registering new datatype: {0}", t.FullName);
                         TypeUtilities.RegisterNativeTypeWithModuleName(t, null, false, false, MODULE_NAME);
